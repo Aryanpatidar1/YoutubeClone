@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+    .shimmer {
+        color: grey;
+
+        -webkit-mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/300% 100%;
+        background-repeat: no-repeat;
+        animation: shimmer 1.5s infinite;
+
+    }
+
+    @keyframes shimmer {
+        100% {
+            -webkit-mask-position: left
+        }
+    }
+
+    .youtube-video-container {
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    .youtube-video-container::after {
+        display: block;
+        content: "";
+        padding-top: 56.25%;
+    }
+
+    .youtube-video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        height: 100%;
+
+
+    }
+}
