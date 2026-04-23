@@ -88,8 +88,10 @@ export const fetchVideoData = async (url) => {
         channelTitle: `Awesome Channel ${i + 1}`,
       },
       contentDetails: { duration: `PT${Math.floor(Math.random() * 20 + 2)}M${Math.floor(Math.random() * 59)}S` },
-      statistics: { viewCount: `${Math.floor(Math.random() * 1000000 + 50000)}` },
-      statistics: { likeCount: `${Math.floor(Math.random() * 100000 + 5000)}` }
+      statistics: { 
+        viewCount: `${Math.floor(Math.random() * 1000000 + 50000)}`,
+        likeCount: `${Math.floor(Math.random() * 100000 + 5000)}` 
+      }
     }));
     return { items: mockItems, nextPageToken: `mock-page-${Date.now()}` };
   }
